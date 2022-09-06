@@ -1,0 +1,23 @@
+server:
+  port: 9091
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbootvue?serverTimezone=GMT%2b8
+    username: root
+    password: gy20001218
+  #最大传输文件
+  servlet:
+    multipart:
+      max-file-size: 100MB
+
+
+#    找到User.xml
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+#文件存储路径（存到前端）
+files:
+  upload:
+    path: C:\Users\高远\Desktop\springboot+vue\vue-springboot\public\files

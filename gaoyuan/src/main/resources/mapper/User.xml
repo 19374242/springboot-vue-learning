@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--注意路径，是mybatis格式-->
+<mapper namespace="com.example.gaoyuan.mapper.UserMapper">
+<!--    id与要使用方法等名字一致-->
+    <update id="update">
+        update userdatabase
+        <set>
+            <if test="username!=null">
+--             千万不能忘记加逗号，否则postman可以，网页就会失败
+                username=#{username},
+            </if>
+            <if test="password!=null">
+                password=#{password},
+            </if>
+            <if test="nickname!=null">
+                nickname=#{nickname},
+            </if>
+            <if test="email!=null">
+                email=#{email},
+            </if>
+            <if test="phone!=null">
+                phone=#{phone},
+            </if>
+            <if test="address!=null">
+                address=#{address},
+            </if>
+        </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+</mapper>
